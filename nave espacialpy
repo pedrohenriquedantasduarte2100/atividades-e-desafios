@@ -1,0 +1,79 @@
+def exploracao_planeta():
+    conquistas = 0
+    explorando = True
+
+    print("Iniciando exploração em Alphara-7...")
+
+    while explorando:
+        print("Explorando a superfície do planeta...")
+
+        obstaculo = input("Há um obstáculo (montanha)? (s/n): ")
+        print('-'*40)
+        
+        if obstaculo.lower() != ("s") or ("n"):
+            print("erro de digitaçao")
+            obstaculo = input("Há um obstáculo (montanha)? (s/n): ")
+            print('-'*40)
+
+        if obstaculo.lower() == "s":
+            print(" Montanha encontrada!")
+            print('-'*40)
+
+            while True:
+                escolha = input("Deseja (1) Escalar ou (2) Contornar? ")
+                print('-'*40)
+
+                if escolha == "1":
+                    sucesso = input("A escalada foi bem-sucedida? (s/n): ")
+                    print('-'*40)
+                    
+                    if sucesso.lower() != ("s") or ("n"):
+                        print("erro de digitaçao")
+                        sucesso = input("A escalada foi bem-sucedida? (s/n): ")
+                        print('-'*40)
+                        
+                    if sucesso.lower() == "s":
+                        print(" Escalada realizada com sucesso!")
+                        print('-'*40)
+                        break
+                    
+                    else:
+                        print(" Falha na escalada! Tente novamente.")
+                        print('-'*40)
+
+                elif escolha == "2":
+                    print(" Montanha contornada com sucesso!")
+                    print('-'*40)
+                    break
+                
+                else:
+                    print("Opção inválida. Escolha 1 ou 2.")
+                    print('-'*40)
+       
+        area_cientifica = input("Encontraram área rica em minerais ou sinais de vida? (s/n): ")
+        print('-'*40)
+        if area_cientifica.lower() != ("s") or ("n"):
+            print("erro de digitaçao")
+            area_cientifica = input("Encontraram área rica em minerais ou sinais de vida? (s/n): ")
+            print('-'*40)
+            
+        if area_cientifica.lower() == "s":
+            conquistas += 10
+            print(f" Dados coletados! Total de conquistas: {conquistas}")
+            print('-'*40)
+
+            decisao = input("Deseja (1) Continuar exploração ou (2) Retornar à nave? ")
+            print('-'*40)
+
+            if decisao == "2":
+                explorando = False
+        else:
+            print(" Nenhuma descoberta científica nesta área.")
+            print('-'*40)
+            
+    print(" Retornando à nave Exploradora Estelar...")
+    print(f" Exploração finalizada com {conquistas} pontos científicos!")
+    print(" Missão concluída!")
+
+
+exploracao_planeta()
